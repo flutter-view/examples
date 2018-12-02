@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'screens/homepage/homepage.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(TestdriveApp());
 
-class MyApp extends StatelessWidget {
+class TestdriveApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Testdrive App',
       home: HomePage()
     );
   }
