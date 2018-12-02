@@ -7,9 +7,9 @@ It shows the how instead of having the counter state in the widgets, it is kept 
 The most important files are:
 
 - [app-model.dart](lib/app-model.dart) : the application model, that receives button events from the view, updates the count, and notifies any listeners (in this case, the homepage)
-- [homepage.pug](lib/screens/homepage/homepage.pug) : creates homepage that shows the count and the + button
-- [homepage.sass](lib/screens/homepage/homepage.sass) : adds styling to the homepage
-- [homepage.dart](lib/screens/homepage/homepage.dart) : the Dart code generated automatically from the above two files
+- [homepage.pug](lib/pages/homepage/homepage.pug) : creates homepage that shows the count and the + button
+- [homepage.sass](lib/pages/homepage/homepage.sass) : adds styling to the homepage
+- [homepage.dart](lib/pages/homepage/homepage.dart) : the Dart code generated automatically from the above two files
 - [main.dart](lib/main.dart) : sets up the app and the app-model, then starts with the homepage, passing the model to it
 
 ## Getting Started
