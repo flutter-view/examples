@@ -1,21 +1,20 @@
-# tester
+# flutter-view todolist
 
-A new Flutter project, based on [flutter-view](https://github.com/blueneogeo/flutter-view), [scoped-model](https://github.com/brianegan/scoped_model) and *reactive-model*.
+This is an example of how you can build a simple todo app using flutter-view and the [flutter-view-tools library](https://pub.dartlang.org/packages/flutter_view_tools).
+
+The most important files are:
+
+- [task.dart](lib/task.dart) : this is the model for a single task. It uses [ScopedModel](https://github.com/brianegan/scoped_model). This allows it to notify listeners of changes.
+- [app-model.dart](lib/app-model.dart) : this is the model for the app. It also uses [ScopedModel](https://github.com/brianegan/scoped_model) and contains the list of tasks, and operations that can be done on them.
+- [taskspage-model.dart](lib/pages/taskspage/taskspage-model.dart) : this is the model for the page that shows the task. It is responsible for keeping state that is only for the taskpage, and handling events from the taskspage. It gets a reference to the app-model, so it can call app-level methods, such as adding and removing tasks
+- [taskspage.pug](lib/screens/taskspage/taskspage.pug) : creates the tasks page. It gets the taskspage-model passed, and shows information from the model and triggers events when the user performs actions, such as swiping to dismiss a task
+- [homepage.sass](lib/screens/taskspage/taskspage.sass) : adds styling to the tasks page
+- [main.dart](lib/main.dart) : Creates the app-model, starts it to load saved tasks, then creates the MaterialApp with the taskspage as the home. It passes a new taskspage-model to the taskspage.
 
 ## Getting Started
 
-For help getting started with Flutter, view the online
+For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
 
-To generate and auto-update the home.dart file, install and then run the *flutter-view* tool in the project directory:
-
-	flutter-view -w lib
-
-## Differences from the standard Flutter starter app
-
-In *lib/main.dart*, the only code you see is the code that launches the app, using the view (from *lib/pages/home/home.dart*) and the model (from *lib/app-model.dart*).
-
-The directory *lib/pages* contains all the pages, in this case only the *HomePage*. This directory contains 3 files:
-- home.pug: flutter-view pug file, that contains our homepage widget structure
-- home.sass: flutter-view sass file, that contains styling for the home.pug
-- home.dart: flutter-view automatically builds this file, by combining home.pug with home.sass
+For help using Flutter-View, check the online
+[flutter-view documentation](https://flutter-view.gitbook.io/).

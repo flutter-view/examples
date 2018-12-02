@@ -2,7 +2,9 @@
 
 This is a flutter-view version of the Flutter starter project. 
 
-It shows the how instead of having the counter state in the widgets, it is kept in the application model, and how the HomePage flutter-view listenes to the model and updates itself when the user presses the + button.
+It uses the **reactive** tag and the [flutter-view-tools library](https://pub.dartlang.org/packages/flutter_view_tools) for responding and updating the count.
+
+Instead of having the counter state in the widgets, it is kept in the application model, and the HomePage flutter-view listenes to the model and updates itself when the user presses the + button.
 
 The most important files are:
 
