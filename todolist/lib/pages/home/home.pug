@@ -1,0 +1,49 @@
+import(file='home-model.dart')
+import(package='tester/app-model.dart')
+import(package='flutter_view_tools/flutter_view_tools.dart')
+
+
+home-page(flutter-view :model)
+	builder
+		scaffold
+			app-bar(as='appBar')
+				#title(as='title') Tasks
+				
+			reactive(as='body' watch='model.app')
+				slot
+
+					list-view#tasks(if='!model.app.tasks.isEmpty')
+						task-entry(for='task in model.app.tasks' :task='task' :model='model')
+
+					center#empty(if='model.app.tasks.isEmpty')
+						.empty-message Press the + to create a task
+
+			floating-action-button(
+				as='floatingActionButton'
+				@on-pressed='model.onAddButtonPressed(context)')
+				icon(:value='Icons.add')
+
+
+task-entry(flutter-view :task :model)
+	reactive(watch='task')
+		dismissible(
+			:key='ValueKey(task)'
+			:on-dismissed='(direction) { model.onTaskDismissed(task); }')
+			card
+				row
+					.title(:text-decoration='model.taskTextDecoration(task)') 
+						| ${task.name}
+					checkbox(
+						:^value='task.done'
+						:on-changed='(checked) { model.onCheckPressed(task, checked); }')
+			.dismiss(as='background') Delete
+
+
+add-task-dialog(flutter-view :controller :on-ok :on-cancel)
+	alert-dialog
+		.title(as='title') Add Task
+		.content(as='content')
+			text-field(autofocus :controller='controller')
+		array(as='actions')
+			flat-button(@on-pressed='onOk()') Ok
+			flat-button(@on-pressed='onCancel()') Cancel
