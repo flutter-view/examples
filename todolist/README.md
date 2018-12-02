@@ -12,7 +12,7 @@ The most important files are:
 	* **task-entry** renders a single task entry.
 	* **add-task-dialog** renders the model dialog for entering a new task. It gets passed the TextController from the model, as well as Functions/closures for handling the *Ok* and *Cancel* button clicks.
 - [taskspage.sass](lib/pages/taskspage/taskspage.sass) : adds styling to the tasks page. Uses the theme() function to assign Theme properties using CSS
-- [taskspage.dart](lib/page/taskspage/taskspage.dart) : this is the code that flutter-view generated from the combination of taskspage.pug and taskspage.sass
+- [taskspage.dart](lib/pages/taskspage/taskspage.dart) : this is the code that flutter-view generated from the combination of taskspage.pug and taskspage.sass
 - [main.dart](lib/main.dart) : Creates the app-model, starts it to load saved tasks, then creates the MaterialApp with the taskspage as the home. It passes a new taskspage-model to the taskspage.
 
 ## Getting Started
