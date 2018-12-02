@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_testdrive/main.dart';
+import 'package:testdrive/main.dart';
 
 void main() {
   testWidgets('testdrive smoke test', (WidgetTester tester) async {

@@ -1,21 +1,19 @@
-import(package='flutter_platform_widgets/flutter_platform_widgets.dart')
-import(package='scoped_model/scoped_model.dart')
-import(package='tester/app-model.dart')
-import(package='tester/util/controller_widget.dart')
-import(package='tester/util/reactive-model.dart')
+import(package='flutter_view_tools/flutter_view_tools.dart')
+import(package='counter/app-model.dart')
+
 
 home-page(flutter-view :model)
-	material-app(title='Flutter Demo!')
-		scaffold(as='home')
-			app-bar(as='appBar')
-				#title(as='title') Welcome
-			center(as='body')
-				reactive(:model='model')
-					.message You have pushed:
-						.counter ${model.counter} times
+	scaffold
+		app-bar(as='appBar')
+			#title(as='title') Welcome
 
-			floating-action-button#btn(
-				as='floatingActionButton'
-				tooltip='Increment'
-				@on-pressed='model.incrementCounter()')
-				icon(:value='Icons.add')
+		center(as='body')
+			reactive(watch='model')
+				.message You have pushed:
+					.counter ${model.counter} times
+
+		floating-action-button#btn(
+			as='floatingActionButton'
+			tooltip='Increment'
+			@on-pressed='model.incrementCounter()')
+			icon(:value='Icons.add')

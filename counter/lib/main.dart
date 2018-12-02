@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:tester/app-model.dart';
-import 'package:tester/pages/animations/animations.dart';
-import 'package:tester/pages/home/home.dart';
-import 'package:tester/pages/test/test.dart';
-import 'package:tester/test-model.dart';
+import 'package:counter/app-model.dart';
+import 'package:counter/pages/home/home.dart';
 
 void main() {
-  runApp(TestApp());
+  runApp(CounterApp());
 }
 
-class TestApp extends StatelessWidget {
-  final model = AppModel();
-  final testModel = TestModel();
+class CounterApp extends StatefulWidget {
+  @override
+  createState() => _CounterAppState();
+}
+
+class _CounterAppState extends State<CounterApp> {
+
+  /// Contains the state and functions of our application,
+  /// which we can pass down into fluttter-view functions
+  AppModel app;
 
   @override
-  build(context) => HomePage(model: model);
-  // build(context) => TestPage(model: testModel);
-  // build(context) => AnimationsPage(model: model);
+  void initState() {
+    super.initState();
+    app = AppModel();
+  }
+
+  @override
+  build(context) => MaterialApp(
+        title: 'Counter App',
+        home: HomePage(model: app), // render the homepage, passing the model
+      );
 }
