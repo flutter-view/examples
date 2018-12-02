@@ -1,4 +1,4 @@
-# flutter_testdrive
+# flutter-view testdrive
 
 This is a starter app to show how to use a flutter-view in your applications. It is used by the [getting started documentation](https://flutter-view.gitbook.io/project/get-started/test-drive) to show a first flutter-view based app.
 
@@ -14,4 +14,4 @@ For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
 
 For help using Flutter-View, check the online
-[flutter-view documentation](https://flutter-view.io).
+[flutter-view documentation](https://flutter-view.gitbook.io/).
