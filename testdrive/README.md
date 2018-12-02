@@ -4,8 +4,8 @@ This is a starter app to show how to use a flutter-view in your applications. It
 
 The most important files are:
 
-- [homepage.pug](lib/screens/homepage/homepage.pug) : creates the hello world page
-- [homepage.sass](lib/screens/homepage/homepage.sass) : adds styling to the hello world page
+- [homepage.pug](lib/pages/homepage/homepage.pug) : creates the hello world page
+- [homepage.sass](lib/pages/homepage/homepage.sass) : adds styling to the hello world page
 - [main.dart](lib/main.dart) : imports and shows the homepage flutter-view
 
 ## Getting Started
