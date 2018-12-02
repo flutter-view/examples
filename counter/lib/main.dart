@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:counter/app-model.dart';
-import 'package:counter/pages/home/homepage.dart';
+import 'package:counter/pages/homepage/homepage.dart';
 
 void main() {
   runApp(CounterApp());
