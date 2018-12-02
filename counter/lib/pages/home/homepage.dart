@@ -8,23 +8,23 @@ import 'package:flutter_view_tools/flutter_view_tools.dart';
 import 'package:counter/app-model.dart';
 // ignore: non_constant_identifier_names
 Scaffold HomePage({ @required model }) {
-  return Scaffold( // project://lib/pages/home/home.pug#6,2
-    appBar: AppBar( // project://lib/pages/home/home.pug#7,3
+  return Scaffold( // project://lib/pages/home/homepage.pug#6,2
+    appBar: AppBar( // project://lib/pages/home/homepage.pug#7,3
       title: 
       //-- TITLE ----------------------------------------------------------
-      Container( // project://lib/pages/home/home.pug#8,4
+      Container( // project://lib/pages/home/homepage.pug#8,4
         child: Text( 
           'Welcome',
         ),
       ),
     ),
-    body: Center( // project://lib/pages/home/home.pug#10,3
-      child: ReactiveWidget( // project://lib/pages/home/home.pug#11,4
+    body: Center( // project://lib/pages/home/homepage.pug#10,3
+      child: ReactiveWidget( // project://lib/pages/home/homepage.pug#11,4
         watch: model as Listenable,
         builder: (context, $) {
           return 
           //-- MESSAGE ----------------------------------------------------------
-          Container( // project://lib/pages/home/home.pug#12,5
+          Container( // project://lib/pages/home/homepage.pug#12,5
             child: Column( 
               children: __flatten([
                 Text( 
@@ -33,7 +33,7 @@ Scaffold HomePage({ @required model }) {
                 DefaultTextStyle.merge( 
                   child: 
                   //-- COUNTER ----------------------------------------------------------
-                  Container( // project://lib/pages/home/home.pug#13,6
+                  Container( // project://lib/pages/home/homepage.pug#13,6
                     child: Text( 
                       '${model.counter} times',
                     ),
@@ -52,10 +52,10 @@ Scaffold HomePage({ @required model }) {
     ),
     floatingActionButton: 
     //-- BTN ----------------------------------------------------------
-    FloatingActionButton( // project://lib/pages/home/home.pug#15,3
+    FloatingActionButton( // project://lib/pages/home/homepage.pug#15,3
       tooltip: 'Increment',
       onPressed: () { model.incrementCounter(); },
-      child: Icon( // project://lib/pages/home/home.pug#19,4
+      child: Icon( // project://lib/pages/home/homepage.pug#19,4
         Icons.add,
       ),
     ),
