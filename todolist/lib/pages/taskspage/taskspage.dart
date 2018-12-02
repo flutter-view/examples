@@ -3,37 +3,39 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter/cupertino.dart';
 // ignore: unused_import
-import 'package:tester/app-model.dart';
-// ignore: unused_import
 import 'package:flutter_view_tools/flutter_view_tools.dart';
 // ignore: unused_import
-import 'home-model.dart';
+import 'package:todolist/app-model.dart';
+// ignore: unused_import
+import 'package:todolist/task.dart';
+// ignore: unused_import
+import 'taskspage-model.dart';
 // ignore: non_constant_identifier_names
-Builder HomePage({ @required model }) {
-  return Builder( // project://lib/pages/home/home.pug#7,2
+Builder TasksPage({ @required TasksPageModel model }) {
+  return Builder( // project://lib/pages/taskspage/taskspage.pug#9,2
     builder: (context) {
-      return Scaffold( // project://lib/pages/home/home.pug#8,3
-        appBar: AppBar( // project://lib/pages/home/home.pug#9,4
+      return Scaffold( // project://lib/pages/taskspage/taskspage.pug#10,3
+        appBar: AppBar( // project://lib/pages/taskspage/taskspage.pug#11,4
           title: 
           //-- TITLE ----------------------------------------------------------
-          Container( // project://lib/pages/home/home.pug#10,5
+          Container( // project://lib/pages/taskspage/taskspage.pug#12,5
             child: Text( 
               'Tasks',
             ),
           ),
         ),
-        body: ReactiveWidget( // project://lib/pages/home/home.pug#12,4
+        body: ReactiveWidget( // project://lib/pages/taskspage/taskspage.pug#14,4
           watch: model.app as Listenable,
           builder: (context, $) {
             return (!model.app.tasks.isEmpty) ?
               // ignore: dead_code
 
               //-- TASKS ----------------------------------------------------------
-              ListView( // project://lib/pages/home/home.pug#15,6
+              ListView( // project://lib/pages/taskspage/taskspage.pug#17,6
                 children: __flatten([
                   (model.app.tasks as List).map((task) {
                     return
-                    TaskEntry( // project://lib/pages/home/home.pug#16,7
+                    TaskEntry( // project://lib/pages/taskspage/taskspage.pug#18,7
                       task: task,
                       model: model,
                     );
@@ -44,17 +46,12 @@ Builder HomePage({ @required model }) {
               // ignore: dead_code
 
               //-- EMPTY ----------------------------------------------------------
-              Center( // project://lib/pages/home/home.pug#18,6
-                child: DefaultTextStyle.merge( 
-                  child: 
-                  //-- EMPTY-MESSAGE ----------------------------------------------------------
-                  Container( // project://lib/pages/home/home.pug#19,7
-                    child: Text( 
-                      'Press the + to create a task',
-                    ),
-                  ),
-                  style: TextStyle( 
-                    fontSize: Theme.of(context).textTheme.title.fontSize,
+              Center( // project://lib/pages/taskspage/taskspage.pug#20,6
+                child: 
+                //-- EMPTY-MESSAGE ----------------------------------------------------------
+                Container( // project://lib/pages/taskspage/taskspage.pug#21,7
+                  child: Text( 
+                    'Press the + to create a task',
                   ),
                 ),
               )
@@ -62,9 +59,9 @@ Builder HomePage({ @required model }) {
             : Container();
           },
         ),
-        floatingActionButton: FloatingActionButton( // project://lib/pages/home/home.pug#21,4
+        floatingActionButton: FloatingActionButton( // project://lib/pages/taskspage/taskspage.pug#23,4
           onPressed: () { model.onAddButtonPressed(context); },
-          child: Icon( // project://lib/pages/home/home.pug#24,5
+          child: Icon( // project://lib/pages/taskspage/taskspage.pug#26,5
             Icons.add,
           ),
         ),
@@ -74,17 +71,17 @@ Builder HomePage({ @required model }) {
 }
 
 // ignore: non_constant_identifier_names
-ReactiveWidget TaskEntry({ @required task, @required model }) {
-  return ReactiveWidget( // project://lib/pages/home/home.pug#28,2
+ReactiveWidget TaskEntry({ @required Task task, @required TasksPageModel model }) {
+  return ReactiveWidget( // project://lib/pages/taskspage/taskspage.pug#31,2
     watch: task as Listenable,
     builder: (context, $) {
-      return Dismissible( // project://lib/pages/home/home.pug#29,3
+      return Dismissible( // project://lib/pages/taskspage/taskspage.pug#32,3
         key: ValueKey(task),
         onDismissed: (direction) { model.onTaskDismissed(task); },
         background: DefaultTextStyle.merge( 
           child: 
           //-- DISMISS ----------------------------------------------------------
-          Container( // project://lib/pages/home/home.pug#39,4
+          Container( // project://lib/pages/taskspage/taskspage.pug#42,4
             child: Text( 
               'Delete',
             ),
@@ -99,13 +96,13 @@ ReactiveWidget TaskEntry({ @required task, @required model }) {
             color: Colors.white,
           ),
         ),
-        child: Card( // project://lib/pages/home/home.pug#32,4
-          child: Row( // project://lib/pages/home/home.pug#33,5
+        child: Card( // project://lib/pages/taskspage/taskspage.pug#35,4
+          child: Row( // project://lib/pages/taskspage/taskspage.pug#36,5
             children: __flatten([
               DefaultTextStyle.merge( 
                 child: 
                 //-- TITLE ----------------------------------------------------------
-                Container( // project://lib/pages/home/home.pug#34,6
+                Container( // project://lib/pages/taskspage/taskspage.pug#37,6
                   child: Text( 
                     '${task.name}',
                   ),
@@ -116,7 +113,7 @@ ReactiveWidget TaskEntry({ @required task, @required model }) {
                   decoration: model.taskTextDecoration(task),
                 ),
               ),
-              Checkbox( // project://lib/pages/home/home.pug#36,6
+              Checkbox( // project://lib/pages/taskspage/taskspage.pug#39,6
                 value: task.done,
                 onChanged: (checked) { model.onCheckPressed(task, checked); },
               )
@@ -131,30 +128,30 @@ ReactiveWidget TaskEntry({ @required task, @required model }) {
 
 // ignore: non_constant_identifier_names
 AlertDialog AddTaskDialog({ @required controller, @required onOk, @required onCancel }) {
-  return AlertDialog( // project://lib/pages/home/home.pug#43,2
+  return AlertDialog( // project://lib/pages/taskspage/taskspage.pug#47,2
     title: 
     //-- TITLE ----------------------------------------------------------
-    Container( // project://lib/pages/home/home.pug#44,3
+    Container( // project://lib/pages/taskspage/taskspage.pug#48,3
       child: Text( 
         'Add Task',
       ),
     ),
     content: 
     //-- CONTENT ----------------------------------------------------------
-    Container( // project://lib/pages/home/home.pug#45,3
-      child: TextField( // project://lib/pages/home/home.pug#46,4
+    Container( // project://lib/pages/taskspage/taskspage.pug#49,3
+      child: TextField( // project://lib/pages/taskspage/taskspage.pug#50,4
         autofocus: true,
         controller: controller,
       ),
     ),
     actions: [
-      FlatButton( // project://lib/pages/home/home.pug#48,4
+      FlatButton( // project://lib/pages/taskspage/taskspage.pug#52,4
         onPressed: () { onOk(); },
         child: Text( 
           'Ok',
         ),
       ),
-      FlatButton( // project://lib/pages/home/home.pug#49,4
+      FlatButton( // project://lib/pages/taskspage/taskspage.pug#53,4
         onPressed: () { onCancel(); },
         child: Text( 
           'Cancel',

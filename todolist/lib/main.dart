@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:tester/app-model.dart';
-import 'package:tester/pages/home/home-model.dart';
-import 'package:tester/pages/home/home.dart';
+import 'package:todolist/app-model.dart';
+import 'package:todolist/pages/taskspage/taskspage-model.dart';
+import 'package:todolist/pages/taskspage/taskspage.dart';
 
 void main() {
-  runApp(TestApp());
+  runApp(TodoListApp());
 }
 
-class TestApp extends StatefulWidget {
+class TodoListApp extends StatefulWidget {
   @override
-  createState() => _TestAppState();
+  createState() => _TodoListAppState();
 }
 
-class _TestAppState extends State<TestApp> {
+class _TodoListAppState extends State<TodoListApp> {
+  /// The app contains a list of tasks and app-level functions
   AppModel app;
 
   @override
   void initState() {
     super.initState();
     app = AppModel();
-    app.start();
+    app.start(); // allows the app to load tasks on startup
   }
 
   @override
   build(context) => MaterialApp(
         title: 'Todo List',
-        home: HomePage(model: HomePageModel(app: app)),
+        // we pass a new task page model into the page, with a reference to our app
+        home: TasksPage(model: TasksPageModel(app: app)),
       );
 }

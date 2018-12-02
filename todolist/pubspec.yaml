@@ -1,5 +1,5 @@
-name: tester
-description: A new Flutter project.
+name: todolist
+description: Example flutter-view project that how a todo list app can be implemented using flutter-view
 
 dependencies:
   flutter:

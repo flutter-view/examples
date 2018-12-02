@@ -1,9 +1,11 @@
-import(file='home-model.dart')
-import(package='tester/app-model.dart')
 import(package='flutter_view_tools/flutter_view_tools.dart')
+import(package='todolist/app-model.dart')
+import(package='todolist/task.dart')
+import(file='taskspage-model.dart')
 
 
-home-page(flutter-view :model)
+//- Shows a Scaffold with a list of tasks and a button to add a new task
+tasks-page(flutter-view :model[TasksPageModel])
 	builder
 		scaffold
 			app-bar(as='appBar')
@@ -24,7 +26,8 @@ home-page(flutter-view :model)
 				icon(:value='Icons.add')
 
 
-task-entry(flutter-view :task :model)
+//- Shows a single task entry
+task-entry(flutter-view :task[Task] :model[TasksPageModel])
 	reactive(watch='task')
 		dismissible(
 			:key='ValueKey(task)'
@@ -39,6 +42,7 @@ task-entry(flutter-view :task :model)
 			.dismiss(as='background') Delete
 
 
+//- Shows a dialog to enter a new task
 add-task-dialog(flutter-view :controller :on-ok :on-cancel)
 	alert-dialog
 		.title(as='title') Add Task

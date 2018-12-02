@@ -1,18 +1,15 @@
 import 'dart:convert' as convert;
 
-import 'package:meta/meta.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tester/pages/home/home-model.dart';
+import 'package:todolist/task.dart';
 
 class AppModel extends Model {
   AppModel() {
     this.tasks = [];
-    this.homePage = HomePageModel(app: this);
   }
 
   List<Task> tasks;
-  HomePageModel homePage;
 
   start() {
     loadTasks();
@@ -55,12 +52,3 @@ class AppModel extends Model {
   }
 }
 
-class Task extends Model {
-  Task({@required this.name, this.done = false});
-
-  String name;
-  bool done;
-
-  factory Task.fromMap(map) => Task(name: map['name'], done: map['done']);
-  Map toMap() => {'name': name, 'done': done};
-}
