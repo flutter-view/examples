@@ -31,11 +31,11 @@ Builder TasksPage({ @required TasksPageModel model }) {
               // ignore: dead_code
 
               //-- TASKS ----------------------------------------------------------
-              ListView( // project://lib/pages/taskspage/taskspage.pug#17,6
+              ListView( // project://lib/pages/taskspage/taskspage.pug#16,6
                 children: __flatten([
                   (model.app.tasks as List).map((task) {
                     return
-                    TaskEntry( // project://lib/pages/taskspage/taskspage.pug#18,7
+                    TaskEntry( // project://lib/pages/taskspage/taskspage.pug#17,7
                       task: task,
                       model: model,
                     );
@@ -46,12 +46,12 @@ Builder TasksPage({ @required TasksPageModel model }) {
               // ignore: dead_code
 
               //-- EMPTY ----------------------------------------------------------
-              Center( // project://lib/pages/taskspage/taskspage.pug#20,6
+              Center( // project://lib/pages/taskspage/taskspage.pug#18,6
                 child: 
                 //-- EMPTY-MESSAGE ----------------------------------------------------------
-                Container( // project://lib/pages/taskspage/taskspage.pug#21,7
+                Container( // project://lib/pages/taskspage/taskspage.pug#19,7
                   child: Text( 
-                    'Press the + to create a task',
+                    'Press + to create a task',
                   ),
                 ),
               )
@@ -59,9 +59,9 @@ Builder TasksPage({ @required TasksPageModel model }) {
             : Container();
           },
         ),
-        floatingActionButton: FloatingActionButton( // project://lib/pages/taskspage/taskspage.pug#23,4
+        floatingActionButton: FloatingActionButton( // project://lib/pages/taskspage/taskspage.pug#21,4
           onPressed: () { model.onAddButtonPressed(context); },
-          child: Icon( // project://lib/pages/taskspage/taskspage.pug#26,5
+          child: Icon( // project://lib/pages/taskspage/taskspage.pug#24,5
             Icons.add,
           ),
         ),
@@ -72,16 +72,16 @@ Builder TasksPage({ @required TasksPageModel model }) {
 
 // ignore: non_constant_identifier_names
 ReactiveWidget TaskEntry({ @required Task task, @required TasksPageModel model }) {
-  return ReactiveWidget( // project://lib/pages/taskspage/taskspage.pug#31,2
+  return ReactiveWidget( // project://lib/pages/taskspage/taskspage.pug#29,2
     watch: task as Listenable,
     builder: (context, $) {
-      return Dismissible( // project://lib/pages/taskspage/taskspage.pug#32,3
+      return Dismissible( // project://lib/pages/taskspage/taskspage.pug#30,3
         key: ValueKey(task),
         onDismissed: (direction) { model.onTaskDismissed(task); },
         background: DefaultTextStyle.merge( 
           child: 
           //-- DISMISS ----------------------------------------------------------
-          Container( // project://lib/pages/taskspage/taskspage.pug#42,4
+          Container( // project://lib/pages/taskspage/taskspage.pug#40,4
             child: Text( 
               'Delete',
             ),
@@ -96,13 +96,13 @@ ReactiveWidget TaskEntry({ @required Task task, @required TasksPageModel model }
             color: Colors.white,
           ),
         ),
-        child: Card( // project://lib/pages/taskspage/taskspage.pug#35,4
-          child: Row( // project://lib/pages/taskspage/taskspage.pug#36,5
+        child: Card( // project://lib/pages/taskspage/taskspage.pug#33,4
+          child: Row( // project://lib/pages/taskspage/taskspage.pug#34,5
             children: __flatten([
               DefaultTextStyle.merge( 
                 child: 
                 //-- TITLE ----------------------------------------------------------
-                Container( // project://lib/pages/taskspage/taskspage.pug#37,6
+                Container( // project://lib/pages/taskspage/taskspage.pug#35,6
                   child: Text( 
                     '${task.name}',
                   ),
@@ -113,7 +113,7 @@ ReactiveWidget TaskEntry({ @required Task task, @required TasksPageModel model }
                   decoration: model.taskTextDecoration(task),
                 ),
               ),
-              Checkbox( // project://lib/pages/taskspage/taskspage.pug#39,6
+              Checkbox( // project://lib/pages/taskspage/taskspage.pug#37,6
                 value: task.done,
                 onChanged: (checked) { model.onCheckPressed(task, checked); },
               )
@@ -128,30 +128,30 @@ ReactiveWidget TaskEntry({ @required Task task, @required TasksPageModel model }
 
 // ignore: non_constant_identifier_names
 AlertDialog AddTaskDialog({ @required controller, @required onOk, @required onCancel }) {
-  return AlertDialog( // project://lib/pages/taskspage/taskspage.pug#47,2
+  return AlertDialog( // project://lib/pages/taskspage/taskspage.pug#45,2
     title: 
     //-- TITLE ----------------------------------------------------------
-    Container( // project://lib/pages/taskspage/taskspage.pug#48,3
+    Container( // project://lib/pages/taskspage/taskspage.pug#46,3
       child: Text( 
         'Add Task',
       ),
     ),
     content: 
     //-- CONTENT ----------------------------------------------------------
-    Container( // project://lib/pages/taskspage/taskspage.pug#49,3
-      child: TextField( // project://lib/pages/taskspage/taskspage.pug#50,4
+    Container( // project://lib/pages/taskspage/taskspage.pug#47,3
+      child: TextField( // project://lib/pages/taskspage/taskspage.pug#48,4
         autofocus: true,
         controller: controller,
       ),
     ),
     actions: [
-      FlatButton( // project://lib/pages/taskspage/taskspage.pug#52,4
+      FlatButton( // project://lib/pages/taskspage/taskspage.pug#50,4
         onPressed: () { onOk(); },
         child: Text( 
           'Ok',
         ),
       ),
-      FlatButton( // project://lib/pages/taskspage/taskspage.pug#53,4
+      FlatButton( // project://lib/pages/taskspage/taskspage.pug#51,4
         onPressed: () { onCancel(); },
         child: Text( 
           'Cancel',

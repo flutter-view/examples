@@ -13,12 +13,10 @@ tasks-page(flutter-view :model[TasksPageModel])
 				
 			reactive(as='body' watch='model.app')
 				slot
-
 					list-view#tasks(if='!model.app.tasks.isEmpty')
 						task-entry(for='task in model.app.tasks' :task='task' :model='model')
-
 					center#empty(if='model.app.tasks.isEmpty')
-						.empty-message Press the + to create a task
+						.empty-message Press + to create a task
 
 			floating-action-button(
 				as='floatingActionButton'
