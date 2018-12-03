@@ -4,23 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 // ignore: non_constant_identifier_names
 Scaffold HomePage() {
-  return Scaffold( // project://lib/screens/homepage/homepage.pug#2,2
-    appBar: AppBar( // project://lib/screens/homepage/homepage.pug#3,3
+  return Scaffold( // project://lib/pages/homepage/homepage.pug#2,2
+    appBar: AppBar( // project://lib/pages/homepage/homepage.pug#3,3
       title: 
       //-- TITLE ----------------------------------------------------------
-      Container( // project://lib/screens/homepage/homepage.pug#4,4
+      Container( // project://lib/pages/homepage/homepage.pug#4,4
         child: Text( 
           'Welcome',
         ),
       ),
     ),
-    body: Center( // project://lib/screens/homepage/homepage.pug#5,3
-      child: FittedBox( // project://lib/screens/homepage/homepage.pug#6,4
+    body: Center( // project://lib/pages/homepage/homepage.pug#5,3
+      child: FittedBox( // project://lib/pages/homepage/homepage.pug#6,4
         child: Column( 
           children: __flatten([
 
             //-- COVER ----------------------------------------------------------
-            Container( // project://lib/screens/homepage/homepage.pug#7,5
+            Container( // project://lib/pages/homepage/homepage.pug#7,5
               decoration: BoxDecoration( 
                 image: DecorationImage( 
                   image: NetworkImage( 
@@ -35,7 +35,7 @@ Scaffold HomePage() {
             DefaultTextStyle.merge( 
               child: 
               //-- GREETING ----------------------------------------------------------
-              Container( // project://lib/screens/homepage/homepage.pug#8,5
+              Container( // project://lib/pages/homepage/homepage.pug#8,5
                 child: Text( 
                   'Hello world!',
                 ),
