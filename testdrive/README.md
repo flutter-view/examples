@@ -10,8 +10,8 @@ The most important files are:
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+For help getting started with Flutter, view the online
+[Flutter documentation](https://flutter.io/).
 
 For help using Flutter-View, check the online
 [flutter-view documentation](https://flutter-view.gitbook.io/).
