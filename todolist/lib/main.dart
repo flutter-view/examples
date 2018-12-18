@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todolist/app-model.dart';
+import 'package:todolist/model/app-model.dart';
 import 'package:todolist/pages/taskspage/taskspage-model.dart';
 import 'package:todolist/pages/taskspage/taskspage.dart';
 

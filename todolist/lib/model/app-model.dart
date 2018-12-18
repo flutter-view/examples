@@ -1,8 +1,8 @@
 import 'dart:convert' as convert;
 
-import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter_view_tools/flutter_view_tools.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todolist/task.dart';
+import 'package:todolist/model/task.dart';
 
 class AppModel extends Model {
   AppModel() {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:todolist/app-model.dart';
+import 'package:todolist/model/app-model.dart';
+import 'package:todolist/model/task.dart';
 import 'package:todolist/pages/taskspage/taskspage.dart';
-import 'package:todolist/task.dart';
 
 /// This is the backing model for the page. It stores data and controllers that 
 /// are related to presenting page information, and it handles events from the page.

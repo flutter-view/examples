@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 // ignore: unused_import
 import 'package:flutter_view_tools/flutter_view_tools.dart';
 // ignore: unused_import
-import 'package:todolist/app-model.dart';
+import 'package:todolist/model/app-model.dart';
 // ignore: unused_import
-import 'package:todolist/task.dart';
+import 'package:todolist/model/task.dart';
 // ignore: unused_import
 import 'taskspage-model.dart';
 // ignore: non_constant_identifier_names
