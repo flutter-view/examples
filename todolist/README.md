@@ -1,5 +1,7 @@
 # flutter-view todolist
 
+![preview image](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRHVDDIma_3N68abufD%2F-LSlCEuPPoYbMZ9fBta4%2F-LSlCnKfJHe19culk9cY%2FScreen%20Shot%202018-12-03%20at%2012.18.00%20AM.png?alt=media&token=63a66832-02e3-42f3-b214-51fcb6917674)
+
 This is an example of how you can build a simple todo app using flutter-view and the [flutter-view-tools library](https://pub.dartlang.org/packages/flutter_view_tools).
 
 The most important files are:
