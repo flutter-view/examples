@@ -1,6 +1,6 @@
 # flutter-view counter
 
-!(https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRHVDDIma_3N68abufD%2F-LSlCEuPPoYbMZ9fBta4%2F-LSlCnKhlmxhF5InILuI%2FScreen%20Shot%202018-12-03%20at%2012.16.29%20AM.png?alt=media&token=0f73abc1-0c9c-4648-9e36-bd68d1fd09ed)
+![preview](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRHVDDIma_3N68abufD%2F-LSlCEuPPoYbMZ9fBta4%2F-LSlCnKhlmxhF5InILuI%2FScreen%20Shot%202018-12-03%20at%2012.16.29%20AM.png?alt=media&token=0f73abc1-0c9c-4648-9e36-bd68d1fd09ed)
 
 This is a flutter-view version of the Flutter starter project. 
 
