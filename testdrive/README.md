@@ -1,5 +1,7 @@
 # flutter-view testdrive
 
+![preview image](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LRHVDDIma_3N68abufD%2F-LSjGOM5Aa3GKWCEWGBY%2F-LSjGZ8SD53ojyudzHYE%2FScreen%20Shot%202018-12-02%20at%202.53.13%20PM.png?alt=media&token=7ee579ba-4aca-42e2-a40e-e530c4fe8128)
+
 This is a starter app to show how to use a flutter-view in your applications. It is used by the [getting started documentation](https://flutter-view.gitbook.io/project/get-started/test-drive) to show a first flutter-view based app.
 
 The most important files are:
