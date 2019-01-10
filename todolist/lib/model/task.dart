@@ -7,7 +7,7 @@ class Task extends Model {
   String name;
   bool done;
 
-  // these methods let us serialize and deserialize a task, so we can store and laod it
+  // these methods let us serialize and deserialize a task, so we can store and load it
   factory Task.fromMap(map) => Task(name: map['name'], done: map['done']);
   Map toMap() => {'name': name, 'done': done};
 }
