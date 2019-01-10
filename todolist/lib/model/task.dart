@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:flutter_view_tools/flutter_view_tools.dart';
 
 class Task extends Model {
   Task({@required this.name, this.done = false});
