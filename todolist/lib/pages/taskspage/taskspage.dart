@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter/cupertino.dart';
 // ignore: unused_import
-import 'package:flutter_view_tools/flutter_view_tools.dart';
+import 'package:flutter_view_widgets/flutter_view_widgets.dart';
 // ignore: unused_import
 import 'package:todolist/model/app-model.dart';
 // ignore: unused_import

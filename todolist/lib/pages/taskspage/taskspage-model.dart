@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:flutter_view_tools/flutter_view_tools.dart';
+import 'package:flutter_view_widgets/flutter_view_widgets.dart';
 import 'package:todolist/model/app-model.dart';
 import 'package:todolist/model/task.dart';
 import 'package:todolist/pages/taskspage/taskspage.dart';
