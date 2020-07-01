@@ -18,33 +18,34 @@ Scaffold HomePage() {
       child: FittedBox( // project://lib/pages/homepage/homepage.pug#6,4
         child: Column( 
           children: __flatten([
-
-            //-- COVER ----------------------------------------------------------
-            Container( // project://lib/pages/homepage/homepage.pug#7,5
-              decoration: BoxDecoration( 
-                image: DecorationImage( 
-                  image: NetworkImage( 
-                    'https://goo.gl/49zLA9',
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              width: 300,
-              height: 300,
-            ),
             DefaultTextStyle.merge( 
               child: 
-              //-- GREETING ----------------------------------------------------------
-              Container( // project://lib/pages/homepage/homepage.pug#8,5
+              //-- DATE ----------------------------------------------------------
+              Container( // project://lib/pages/homepage/homepage.pug#7,5
                 child: Text( 
-                  'Hello world!',
+                  '23-7-2001',
                 ),
-                margin: EdgeInsets.only(top: 10),
               ),
               style: TextStyle( 
                 fontSize: 30,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
+                color: Colors.grey,
+              ),
+            ),
+
+            //-- OVERDUE ----------------------------------------------------------
+            Container( // project://lib/pages/homepage/homepage.pug#8,5
+              child: DefaultTextStyle.merge( 
+                child: 
+                //-- DATE ----------------------------------------------------------
+                Container( // project://lib/pages/homepage/homepage.pug#9,6
+                  child: Text( 
+                    '23-8-2000',
+                  ),
+                ),
+                style: TextStyle( 
+                  fontSize: 30,
+                  color: Colors.red,
+                ),
               ),
             )
           ]),
