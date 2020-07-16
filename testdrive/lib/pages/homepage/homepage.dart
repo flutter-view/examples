@@ -18,34 +18,25 @@ Scaffold HomePage() {
       child: FittedBox( // project://lib/pages/homepage/homepage.pug#6,4
         child: Column( 
           children: __flatten([
-            DefaultTextStyle.merge( 
-              child: 
-              //-- DATE ----------------------------------------------------------
-              Container( // project://lib/pages/homepage/homepage.pug#7,5
-                child: Text( 
-                  '23-7-2001',
+
+            //-- COVER ----------------------------------------------------------
+            Container( // project://lib/pages/homepage/homepage.pug#7,5
+              decoration: BoxDecoration( 
+                image: DecorationImage( 
+                  image: NetworkImage( 
+                    'https://cutt.ly/Gat1ivy',
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
-              style: TextStyle( 
-                fontSize: 30,
-                color: Colors.grey,
-              ),
+              width: 300,
+              height: 300,
             ),
 
-            //-- OVERDUE ----------------------------------------------------------
+            //-- GREETING ----------------------------------------------------------
             Container( // project://lib/pages/homepage/homepage.pug#8,5
-              child: DefaultTextStyle.merge( 
-                child: 
-                //-- DATE ----------------------------------------------------------
-                Container( // project://lib/pages/homepage/homepage.pug#9,6
-                  child: Text( 
-                    '23-8-2000',
-                  ),
-                ),
-                style: TextStyle( 
-                  fontSize: 30,
-                  color: Colors.red,
-                ),
+              child: Text( 
+                'Hello world!',
               ),
             )
           ]),
