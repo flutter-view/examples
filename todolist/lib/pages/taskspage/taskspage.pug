@@ -1,5 +1,4 @@
 import(package='flutter_view_widgets/flutter_view_widgets.dart')
-import(package='todolist/model/app-model.dart')
 import(package='todolist/model/task.dart')
 import(file='taskspage-model.dart')
 
@@ -47,5 +46,5 @@ add-task-dialog(flutter-view :controller :on-ok :on-cancel)
 		.content(as='content')
 			text-field(autofocus :controller='controller')
 		array(as='actions')
-			flat-button(@on-pressed='onOk()') Ok
-			flat-button(@on-pressed='onCancel()') Cancel
+			text-button(@on-pressed='onOk()') Ok
+			text-button(@on-pressed='onCancel()') Cancel

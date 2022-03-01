@@ -9,14 +9,14 @@ import 'package:todolist/pages/taskspage/taskspage.dart';
 /// are related to presenting page information, and it handles events from the page.
 /// It has a reference to the app, so it can ask the app model to perform app-level operations.
 class TasksPageModel extends Model {
-  TasksPageModel({@required this.app}) : taskNameController = TextEditingController(text: '');
+  TasksPageModel({required this.app}) : taskNameController = TextEditingController(text: '');
 
   final AppModel app;
   final TextEditingController taskNameController;
 
   /// Called when the user checks a task
-  onCheckPressed(Task task, bool value) {
-    this.app.updateTask(task, value);
+  onCheckPressed(Task task, bool? value) {
+    this.app.updateTask(task, value != null ? value : false);
   }
 
   /// Called when the user performs a swipe to dismiss a task

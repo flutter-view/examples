@@ -15,7 +15,7 @@ class _CounterAppState extends State<CounterApp> {
 
   /// Contains the state and functions of our application,
   /// which we can pass down into fluttter-view functions
-  AppModel app;
+  late AppModel app;
 
   @override
   void initState() {

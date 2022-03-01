@@ -1,9 +1,11 @@
 name: todolist
 description: Example flutter-view project that how a todo list app can be implemented using flutter-view
 
+version: 1.0.0
+
 environment:
-  sdk: '>=2.10.0 <3.0.0'
-  
+  sdk: '>=2.12.0 <3.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
