@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:flutter_view_widgets/flutter_view_widgets.dart';
 
 class Task extends Model {
-  Task({@required this.name, this.done = false});
+  Task({required this.name, this.done = false});
 
   String name;
   bool done;

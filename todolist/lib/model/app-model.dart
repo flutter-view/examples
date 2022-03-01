@@ -5,9 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todolist/model/task.dart';
 
 class AppModel extends Model {
-  AppModel() {
-    this.tasks = [];
-  }
+  AppModel(): tasks = [];
 
   List<Task> tasks;
 
@@ -15,7 +13,7 @@ class AppModel extends Model {
     loadTasks();
   }
 
-  addTask({String title}) {
+  addTask({required String title}) {
     final task = Task(name: title);
     this.tasks.add(task);
     this.notifyListeners();

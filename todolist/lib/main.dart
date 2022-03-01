@@ -14,7 +14,7 @@ class TodoListApp extends StatefulWidget {
 
 class _TodoListAppState extends State<TodoListApp> {
   /// The app contains a list of tasks and app-level functions
-  AppModel app;
+  late AppModel app;
 
   @override
   void initState() {
